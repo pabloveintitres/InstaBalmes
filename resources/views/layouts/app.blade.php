@@ -23,8 +23,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    InstaBalmes
+                <a class="navbar-brand d-flex" href="{{ url('/') }}">
+                    <div class="pr-3" id="divLogo"><img src="/svg/InstaBalmesLogo.svg" alt="" id="logo" ></div>
+                    <div class="pl-3" >InstaBalmes</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
