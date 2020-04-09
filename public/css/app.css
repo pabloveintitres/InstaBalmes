@@ -16,3 +16,7 @@
     max-width: 50px;
     border-right: 1px solid #333;
 }
+
+#profileImage {
+    max-width: 50%;
+}
