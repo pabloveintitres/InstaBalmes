@@ -8,15 +8,16 @@
             </div>
             <div class="col-9 pt-5 pl-5">
                 <div>
-                    <h1>Visca La Puri</h1>
+                    <h1>{{ $user->username }}</h1>
                 </div>
                 <div class="d-flex">
                     <div class="pr-5">153</div>
                     <div class="pr-5"><strong>23k</strong> followers</div>
                     <div class="pr-5"><strong>212</strong> following</div>
                 </div>
-                <div class="pt-3">Al voltant del Carrer Puríssima Concepció: el seus habitants, el seus espais, la seva història. #ViscaLaPuri #ElSolarDeLaPuri</div>
-                <div><strong><a href=#>https://www.instagram.com/visca_la_puri/</a></strong></div>
+                <div class="pt-3">{{ $user->profile->title }}</div>
+                <div >{{ $user->profile->description }}</div>
+                <div><strong><a href=#>{{ $user->profile->url }}</a></strong></div>
             </div>
         </div>
         <div class="row pt-5">
