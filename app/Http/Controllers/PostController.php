@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    // 2:07:03 Añadir middleware por Seguridad
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -25,12 +25,14 @@ class PostController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        // 2:11:51 php artisan storage:link. Crear enlace simbólico [...]
-        dd(request('image')->store('uploads', 'public'));
+        $imagePath = (request('image')->store('uploads', 'public'));
 
-        //\App\Post::create($data);
-        auth()->user()->posts()->create($data);
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'image' => $imagePath,
+        ]);
 
-        dd(request()->all());
+        return redirect('/profile/' . auth()->user()->id);
+
     }
 }
