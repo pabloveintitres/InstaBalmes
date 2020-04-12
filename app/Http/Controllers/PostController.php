@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    // 2:07:03 Añadir middleware por Seguridad
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-    //Retornos de las vistas provenientes de web.php alli se llama al controlador y al método.
-    //Por convención se nombran los metodos igual que las rutas. Agrupar los métodos que retornan vistas
-    //para identificarlos fácilmente.
     public function create()
     {
         return view('posts/create');
@@ -23,7 +25,11 @@ class PostController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        \App\Post::create($data);
+        // 2:11:51 php artisan storage:link. Crear enlace simbólico [...]
+        dd(request('image')->store('uploads', 'public'));
+
+        //\App\Post::create($data);
+        auth()->user()->posts()->create($data);
 
         dd(request()->all());
     }
