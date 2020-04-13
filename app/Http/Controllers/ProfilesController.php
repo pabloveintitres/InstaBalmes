@@ -15,4 +15,15 @@ class ProfilesController extends Controller
             'user' => $user
         ]);
     }
+
+    public function profiles()
+    {
+        $users = User::all();
+
+        //dd($users);
+
+        return view('profiles/profiles', [
+            'users' => $users
+        ]);
+    }
 }

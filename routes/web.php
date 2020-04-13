@@ -27,5 +27,8 @@ Route::post('/p', 'PostController@store');
 
 Route::get('/p/{post}', 'PostController@show');
 
-// Profiles
+// Single profile
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
+
+// Show all profiles
+Route::get('/profiles', 'ProfilesController@profiles');

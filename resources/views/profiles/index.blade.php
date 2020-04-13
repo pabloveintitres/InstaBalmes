@@ -9,6 +9,8 @@
             <div class="col-9 pt-5 pl-5">
                 <div class="d-flex justify-content-between align-items-baseline">
                     <h1>{{ $user->username }}</h1>
+                    <a class="btn-outline-primary" href="/profiles">Find other users</a>
+{{--                    <a class="btn-outline-primary" href="#">Edit profile</a>--}}
                     <a class="btn-outline-primary" href="/p/create">Add new post</a>
                 </div>
                 <div class="d-flex">
@@ -16,9 +18,9 @@
                     <div class="pr-5"><strong>23k</strong> followers</div>
                     <div class="pr-5"><strong>212</strong> following</div>
                 </div>
-                <div class="pt-3">{{ $user->profile->title }}</div>
-                <div >{{ $user->profile->description }}</div>
-                <div><strong><a href=#>{{ $user->profile->url }}</a></strong></div>
+                {{--                <div class="pt-3">{{ $user->profile->title }}</div>
+                                <div >{{ $user->profile->description }}</div>
+                                <div><strong><a href=#>{{ $user->profile->url }}</a></strong></div>--}}
             </div>
         </div>
         <div class="row pt-5">
